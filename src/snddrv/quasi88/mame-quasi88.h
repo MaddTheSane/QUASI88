@@ -73,6 +73,9 @@ typedef signed   long long INT64;
 #ifdef	macintosh	/* SC depend */
 #define CLIB_DECL
 #endif
+#ifdef __APPLE__
+#define CLIB_DECL
+#endif
 
 
 
@@ -328,7 +331,7 @@ int osd_update_audio_stream(INT16 *buffer);
 void osd_stop_audio_stream(void);
 
 void osd_set_mastervolume(int attenuation);
-int osd_get_mastervolume(void);
+extern int osd_get_mastervolume(void);
 
 void osd_sound_enable(int enable);
 

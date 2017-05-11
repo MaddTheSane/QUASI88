@@ -816,7 +816,7 @@ void Channel4::SetAlgorithm(uint algo)
 //  πÁ¿Æ
 ISample Channel4::Calc()
 {
-	int r;
+	int r = 0;
 	switch (algo_)
 	{
 	case 0:

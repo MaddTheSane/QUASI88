@@ -29,6 +29,7 @@ Version 0.2, March 2000
 #include "sysdep_mixer_priv.h"
 #include "sysdep_mixer_plugins.h"
 #include "xmame.h"
+#include <stdlib.h>
 
 /* #define SYSDEP_MIXER_DEBUG */
 
@@ -76,6 +77,10 @@ static const struct plugin_struct *sysdep_mixer_plugins[] = {
 };
 #ifdef SYSDEP_MIXER_DEBUG
 const char *sysdep_mixer_names[] = SYSDEP_MIXER_NAMES;
+#endif
+
+#ifndef OSD_OK
+#define OSD_OK 0
 #endif
 
 /* private methods */

@@ -101,6 +101,9 @@ void	emu_breakpoint_init( void )
  *
  ************************************************************************/
 
+#ifdef INFINITY
+#undef INFINITY
+#endif
 #define	INFINITY	(0)
 #define	ONLY_1STEP	(1)
 

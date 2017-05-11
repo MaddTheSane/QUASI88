@@ -99,6 +99,8 @@ static const struct plugin_struct *sysdep_dsp_plugins[] = {
    NULL
 };
 
+#define OSD_OK 0
+
 /* private methods */
 static int sysdep_dsp_list_plugins(struct rc_option *option, const char *arg,
 		int priority)

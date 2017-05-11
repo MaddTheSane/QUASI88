@@ -31,6 +31,8 @@ Version 0.1, March 2000
 /* #define SYSDEP_SOUND_STREAM_DEBUG */
 /* #define SYSDEP_SOUND_STREAM_WARNING */
 
+#define INLINE static inline
+
 /* private methods */
 FIFO(INLINE, sample_buf, struct sysdep_sound_stream_sample_buf *)
 

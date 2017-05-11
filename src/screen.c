@@ -5,6 +5,7 @@
 /************************************************************************/
 
 #include <string.h>
+#include <stdlib.h>
 
 #include "quasi88.h"
 #include "initval.h"
@@ -290,7 +291,7 @@ static unsigned long added_pixel[120+16];
 
 static	int	open_window(void)
 {
-    int i, size, found = FALSE;
+    int i, size = 0, found = FALSE;
     int w = 0, h = 0, status_displayable = FALSE;
     const T_GRAPH_INFO *info;
 
@@ -432,6 +433,9 @@ static	int	open_window(void)
 	}
 
 	/* サイズの諸言を計算 */
+		if (info->byte_per_pixel == 0) {
+			return FALSE;
+		}
 	WIDTH      = info->byte_per_line / info->byte_per_pixel;
 	if (info->fullscreen) {
 	    HEIGHT = info->height;

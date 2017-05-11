@@ -254,7 +254,7 @@ coreaudio_dsp_destroy(struct sysdep_dsp_struct *dsp)
     audio_err = AudioUnitUninitialize (priv->unit);
 	if (audio_err) { printf ("AudioUnitUninitialize=%ld\n", audio_err); return; }
 
-	CloseComponent (priv->unit);
+	AudioComponentInstanceDispose (priv->unit);
 }
 
 static int
@@ -335,20 +335,20 @@ coreaudio_dsp_create(const void *flags)
 	{
 		// Open the default output unit
 
-		ComponentDescription desc;
+		AudioComponentDescription desc;
 		desc.componentType = kAudioUnitType_Output;
 		desc.componentSubType = kAudioUnitSubType_DefaultOutput;
 		desc.componentManufacturer = kAudioUnitManufacturer_Apple;
 		desc.componentFlags = 0;
 		desc.componentFlagsMask = 0;
 	
-		Component comp = FindNextComponent(NULL, &desc);
+		AudioComponent comp = AudioComponentFindNext(NULL, &desc);
 		if(comp == NULL){
 		    fprintf(stderr, "Error: FindNextComponent()\n");
 		    return NULL;
 		}
 	
-		audio_err = OpenAComponent(comp, &priv->unit);
+		audio_err = AudioComponentInstanceNew(comp, &priv->unit);
 		if(audio_err != noErr){
 		    fprintf(stderr, "Error: OpenAComponent(): %ld\n", audio_err);
 		    return NULL;
