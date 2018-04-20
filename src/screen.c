@@ -291,7 +291,7 @@ static unsigned long added_pixel[120+16];
 
 static	int	open_window(void)
 {
-    int i, size, found = FALSE;
+    int i=0, size=0, found = FALSE;
     int w = 0, h = 0, status_displayable = FALSE;
     const T_GRAPH_INFO *info;
 
