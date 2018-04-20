@@ -35,6 +35,7 @@ static	const	T_CONFIG_TABLE classic_options[] =
   { 300, "8bpp",         X_FIX,  &mac_8bpp,        TRUE,                  0,0, 0        },
   { 300, "15bpp",        X_FIX,  &mac_8bpp,        FALSE,                 0,0, 0        },
   { 300, "16bpp",        X_FIX,  &mac_8bpp,        FALSE,                 0,0, 0        },
+  { 300, "32bpp",        X_FIX,  &mac_8bpp,        FALSE,                 0,0, 0        },
 
   /*  -- 無視 -- (他システムの引数つきオプション) */
   {   0, "cmap",         X_INV,  &invalid_arg,                          0,0,0, 0        },

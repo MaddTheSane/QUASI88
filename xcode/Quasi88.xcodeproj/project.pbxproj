@@ -222,14 +222,14 @@
 		55CD7F821EB854B900640CE3 /* z80-table.h */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.h; name = "z80-table.h"; path = "../../src/z80-table.h"; sourceTree = "<group>"; };
 		55CD7F831EB854B900640CE3 /* z80.c */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.c; name = z80.c; path = ../../src/z80.c; sourceTree = "<group>"; };
 		55CD7F841EB854B900640CE3 /* z80.h */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.h; name = z80.h; path = ../../src/z80.h; sourceTree = "<group>"; };
-		55CD7FB71EB85EA300640CE3 /* config.h */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		55CD7FB81EB85EA300640CE3 /* device.h */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.h; path = device.h; sourceTree = "<group>"; };
-		55CD7FBA1EB85EA300640CE3 /* graph.c */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.c; path = graph.c; sourceTree = "<group>"; };
+		55CD7FB71EB85EA300640CE3 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		55CD7FB81EB85EA300640CE3 /* device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device.h; sourceTree = "<group>"; };
+		55CD7FBA1EB85EA300640CE3 /* graph.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = graph.c; sourceTree = "<group>"; };
 		55CD7FBB1EB85EA300640CE3 /* main.c */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		55CD7FBC1EB85EA300640CE3 /* menubar.c */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.c; path = menubar.c; sourceTree = "<group>"; };
-		55CD7FBD1EB85EA300640CE3 /* wait.c */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.c; path = wait.c; sourceTree = "<group>"; };
+		55CD7FBC1EB85EA300640CE3 /* menubar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = menubar.c; sourceTree = "<group>"; };
+		55CD7FBD1EB85EA300640CE3 /* wait.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wait.c; sourceTree = "<group>"; };
 		55CD7FC41EB8619300640CE3 /* QUASI88-rsrc.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = "QUASI88-rsrc.r"; sourceTree = "<group>"; };
-		55CD7FC71EB862B900640CE3 /* OldCarbHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OldCarbHeaders.h; sourceTree = "<group>"; };
+		55CD7FC71EB862B900640CE3 /* OldCarbHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldCarbHeaders.h; sourceTree = "<group>"; };
 		55CD7FC91EB866B200640CE3 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		55CD7FCD1EB8676D00640CE3 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuickTime.framework; sourceTree = "<group>"; };
 		55CD7FCF1EB869D800640CE3 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
@@ -333,7 +333,7 @@
 		55CD80801EB87E8200640CE3 /* audio.h */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
 		55CD80811EB87E8200640CE3 /* sdl.c */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.c; path = sdl.c; sourceTree = "<group>"; };
 		55EC4B5A20898853001F3EC0 /* event-IOKit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "event-IOKit.c"; sourceTree = "<group>"; };
-		55EC4B5C2089891E001F3EC0 /* event.c */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.c; path = event.c; sourceTree = "<group>"; };
+		55EC4B5C2089891E001F3EC0 /* event.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = event.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

@@ -43,6 +43,11 @@ void	event_init(void)
  */
 void	event_update(void)
 {
+	bool loop = true;
+	while (loop) {
+		
+	}
+	
 }
 
 /*

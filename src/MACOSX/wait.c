@@ -1,7 +1,7 @@
-/***********************************************************************
- * ��������Ĵ������ (�����ƥ��¸)
+﻿/***********************************************************************
+ * ウエイト調整処理 (システム依存)
  *
- *      �ܺ٤ϡ� wait.h ����
+ *      詳細は、 wait.h 参照
  ************************************************************************/
 
 #include "quasi88.h"
@@ -13,27 +13,27 @@
 
 
 /*---------------------------------------------------------------------------*/
-static	int	wait_counter = 0;		/* Ϣ³������֥����С�������*/
-static	int	wait_count_max = 10;		/* ����ʾ�Ϣ³�����С�������
-						   ��ö,����Ĵ������������ */
+static	int	wait_counter = 0;		/* 連続何回時間オーバーしたか*/
+static	int	wait_count_max = 10;		/* これ以上連続オーバーしたら
+						   一旦,時刻調整を初期化する */
 
-/* �������Ȥ˻��Ѥ�����֤�����ɽ���ϡ� usñ�̤Ȥ��롣 (ms�������٤��㤤�Τ�) 
+/* ウェイトに使用する時間の内部表現は、 us単位とする。 (msだと精度が低いので) 
 
-   ToolBox �λ�������ؿ� TickCount() �� 1/60s ñ�̤��ͤ��֤���
-   ��������� us ���Ѵ����ƻ��Ѥ��뤳�Ȥˤ��롣
-   ����ɽ���� long ���ˤ���ȡ�71ʬ�Ƿ夢�դ�(wrap)�򵯤����Ƥ��ޤ������νִ֤�
-   �������ʤ�Τˤʤ� (�������Ȼ��֤��Ѥˤʤ�) ��
-   �Ǥ���� 64bit��(long long)�ˤ��������ɡ��ɤ����������Ƥʤ� ? */
+   ToolBox の時刻取得関数 TickCount() は 1/60s 単位の値を返す。
+   これを整数 us に変換して使用することにする。
+   内部表現を long 型にすると、71分で桁あふれ(wrap)を起こしてしまい、この瞬間は
+   おかしなものになる (ウェイト時間が変になる) 。
+   できれば 64bit型(long long)にしたいけど、どこか定義されてない ? */
 
 typedef	uint64_t T_WAIT_TICK;
 
-static	T_WAIT_TICK	next_time;		/* ���ե졼��λ��� */
-static	T_WAIT_TICK	delta_time;		/* 1 �ե졼��λ��� */
+static	T_WAIT_TICK	next_time;		/* 次フレームの時刻 */
+static	T_WAIT_TICK	delta_time;		/* 1 フレームの時間 */
 static mach_timebase_info_data_t tbInfo;
 
 
 
-/* ---- ���߻����������� (usecñ��) ---- */
+/* ---- 現在時刻を取得する (usec単位) ---- */
 
 #define	GET_TICK()	( (T_WAIT_TICK)mach_absolute_time() )
 
@@ -42,7 +42,7 @@ static mach_timebase_info_data_t tbInfo;
 
 
 /****************************************************************************
- * ��������Ĵ�������ν��������λ
+ * ウェイト調整処理の初期化／終了
  *****************************************************************************/
 int	wait_vsync_init(void)
 {
@@ -58,24 +58,24 @@ void	wait_vsync_exit(void)
 
 
 /****************************************************************************
- * ��������Ĵ������������
+ * ウェイト調整処理の設定
  *****************************************************************************/
 void	wait_vsync_setup(long vsync_cycle_us, int do_sleep)
 {
     wait_counter = 0;
 
 
-    delta_time = (T_WAIT_TICK)(1000000.0 / 60.0);	/* 1�ե졼����� */
-    next_time  = GET_TICK() + delta_time;		/* ���ե졼����� */
+    delta_time = (T_WAIT_TICK)(1000000.0 / 60.0);	/* 1フレーム時間 */
+    next_time  = GET_TICK() + delta_time;		/* 次フレーム時刻 */
 
 
-    /* ���� vsync_cycle_us, do_sleep ��̵�뤹�� */
+    /* 設定 vsync_cycle_us, do_sleep は無視する */
 }
 
 
 
 /****************************************************************************
- * ��������Ĵ�������μ¹�
+ * ウェイト調整処理の実行
  *****************************************************************************/
 int	wait_vsync_update(void)
 {
@@ -85,13 +85,13 @@ int	wait_vsync_update(void)
 
     diff_us = next_time - GET_TICK();
 
-	if (diff_us > 0) {			/* �٤�Ƥʤ�(���֤�;�äƤ���)�ʤ� */
+	if (diff_us > 0) {			/* 遅れてない(時間が余っている)なら */
 		
-#if 0					/* �ӥ����������Ȥ���Ȥ����롩  */
+#if 0					/* ビジーウェイトするとこける？  */
 		while (GET_TICK() <= next_time)
 			;
 		
-#else					/* Delay ���Ƥߤ롦���� */
+#else					/* Delay してみる・・・ */
 		diff_us = diff_us * 60 / 1000000 * tbInfo.numer / tbInfo.denom;
 		if (diff_us) {
 			mach_wait_until(diff_us);
@@ -102,16 +102,16 @@ int	wait_vsync_update(void)
 	}
 
 
-    /* ���ե졼�����򻻽� */
+    /* 次フレーム時刻を算出 */
     next_time += delta_time;
 
 
-    if (on_time) {			/* ������˽����Ǥ��� */
+    if (on_time) {			/* 時間内に処理できた */
 	wait_counter = 0;
-    } else {				/* ������˽����Ǥ��Ƥ��ʤ� */
+    } else {				/* 時間内に処理できていない */
 	wait_counter ++;
-	if (wait_counter >= wait_count_max) {	/* �٤줬�Ҥɤ����� */
-	    wait_vsync_setup(0,0);		/* �������Ȥ�����   */
+	if (wait_counter >= wait_count_max) {	/* 遅れがひどい場合は */
+	    wait_vsync_setup(0,0);		/* ウェイトを初期化   */
 	}
     }
 
