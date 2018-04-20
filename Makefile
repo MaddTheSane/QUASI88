@@ -107,8 +107,8 @@ X11_HAVE_GETTIMEOFDAY = 1
 #	FreeBSD にて USB joystick が使用できます。
 #	( 環境によっては、コンパイルすらできないかもしれません )
 
-X11_JOYSTICK	= joy_nothing
-# X11_JOYSTICK	= joy_sdl
+# X11_JOYSTICK	= joy_nothing
+X11_JOYSTICK	= joy_sdl
 # X11_JOYSTICK	= joy_linux_usb
 # X11_JOYSTICK	= joy_bsd_usb
 
@@ -188,7 +188,7 @@ USE_SOUND		= 1
 #	動作確認が取れているのは、FreeBSD と Linux のみです
 
 #---------------------- FreeBSD
-ARCH = freebsd
+# ARCH = freebsd
 #---------------------- Linux
 # ARCH = linux
 #---------------------- NetBSD
@@ -202,7 +202,7 @@ ARCH = freebsd
 #---------------------- OpenStep on NeXT systems
 # ARCH = next
 #---------------------- OpenStep on Apple systems (Cocoa)
-# ARCH = macosx
+ARCH = macosx
 #---------------------- IRIX ( with sound using the old AL (version 1) package)
 # ARCH = irix
 #---------------------- IRIX ( with sound using the al (IRIX 6.x) package)
@@ -225,7 +225,7 @@ ARCH = freebsd
 # SOUND_ALSA		= 1
 # SOUND_ARTS_TEIRA	= 1
 # SOUND_ARTS_SMOTEK	= 1
-# SOUND_SDL		= 1
+SOUND_SDL		= 1
 # SOUND_WAVEOUT		= 1
 
 
@@ -303,7 +303,7 @@ CC	= gcc
 #	あります。PowerPC 系の gcc などがそうですが、この場合、-fsigned-char 
 #	を指定します。
 
-CFLAGS = -O2
+CFLAGS += -O2
 
 # 例えば gcc & PowerPC の場合、以下のコメントアウトを外します。
 # CFLAGS += -fsigned-char
@@ -335,8 +335,12 @@ USEINLINE	= '-DINLINE=static __inline__'
 # X11LIB  	= -L/usr/X11R6/lib
 
 # X.Org の場合
-X11INC  	= -I/usr/local/include
-X11LIB  	= -L/usr/local/lib
+# X11INC  	= -I/usr/local/include
+# X11LIB  	= -L/usr/local/lib
+
+# X.Org の場合
+X11INC  	= -I/opt/X11/include
+X11LIB  	= -L/opt/X11/lib
 
 
 
@@ -349,7 +353,7 @@ X11LIB  	= -L/usr/local/lib
 
 CXX	 = g++
 CXXFLAGS = $(CFLAGS)
-CXXLIBS	 = -lstdc++
+CXXLIBS	 = -lc++
 
 
 # リンカの設定
