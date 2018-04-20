@@ -84,9 +84,9 @@ void	mac_init(void)
     // depth check
 #ifdef	SUPPORT_16BPP
     if (mac_8bpp) displayDepth = 8;	/* 256色モード  から先にチェックする */
-    else          displayDepth = 16;	/* 32000色モードから先にチェックする */
+    else          displayDepth = 32;	/* 32000色モードから先にチェックする */
     if (! HasDepth(GetMainDevice(), displayDepth, 1, 1)) {
-	if (displayDepth == 8) displayDepth = 16;
+	if (displayDepth == 8) displayDepth = 32;
 	else                   displayDepth = 8;
 	if (! HasDepth(GetMainDevice(), displayDepth, 1, 1)) {
 	    mac_error_dialog( "Sorry, 256 or 32000 Color mode only!" );
