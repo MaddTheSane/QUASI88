@@ -19,7 +19,7 @@
 			OutputDirectory="./win32/Debug"
 			IntermediateDirectory="./win32/Debug"
 			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults促UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -48,7 +48,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\src,..\src\FWIN,..\src\WIN32,..\src\snddrv,..\src\snddrv\quasi88,..\src\snddrv\src,..\src\snddrv\src\sound,..\src\fmgen"
+				AdditionalIncludeDirectories="..促src,..促src促FWIN,..促src促WIN32,..促src促snddrv,..促src促snddrv促quasi88,..促src促snddrv促src,..促src促snddrv促src促sound,..促src促fmgen"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;USE_SOUND;USE_FMGEN;DEBUGPRINTF"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -114,7 +114,7 @@
 			OutputDirectory="./win32/Release"
 			IntermediateDirectory="./win32/Release"
 			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults促UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -144,7 +144,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\src,..\src\FWIN,..\src\WIN32,..\src\snddrv,..\src\snddrv\quasi88,..\src\snddrv\src,..\src\snddrv\src\sound,..\src\fmgen"
+				AdditionalIncludeDirectories="..促src,..促src促FWIN,..促src促WIN32,..促src促snddrv,..促src促snddrv促quasi88,..促src促snddrv促src,..促src促snddrv促src促sound,..促src促fmgen"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;USE_SOUND;USE_FMGEN"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -212,7 +212,7 @@
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
 			<File
-				RelativePath="..\src\snddrv\quasi88\2203fmgen.cpp"
+				RelativePath="..促src促snddrv促quasi88促2203fmgen.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -234,7 +234,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sound\2203intf.c"
+				RelativePath="..促src促snddrv促src促sound促2203intf.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -256,7 +256,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\quasi88\2608fmgen.cpp"
+				RelativePath="..促src促snddrv促quasi88促2608fmgen.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -278,7 +278,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sound\2608intf.c"
+				RelativePath="..促src促snddrv促src促sound促2608intf.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -300,7 +300,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\WIN32\audio.c"
+				RelativePath="..促src促WIN32促audio.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -322,7 +322,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sound\ay8910.c"
+				RelativePath="..促src促snddrv促src促sound促ay8910.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -344,7 +344,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\basic.c"
+				RelativePath="..促src促basic.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -366,7 +366,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\quasi88\beep.c"
+				RelativePath="..促src促snddrv促quasi88促beep.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -388,7 +388,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\quasi88\beepintf.c"
+				RelativePath="..促src促snddrv促quasi88促beepintf.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -410,7 +410,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\crtcdmac.c"
+				RelativePath="..促src促crtcdmac.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -432,7 +432,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\driver.c"
+				RelativePath="..促src促snddrv促src促driver.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -454,7 +454,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\emu.c"
+				RelativePath="..促src促emu.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -476,7 +476,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\WIN32\event.c"
+				RelativePath="..促src促WIN32促event.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -498,7 +498,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\fdc.c"
+				RelativePath="..促src促fdc.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -520,7 +520,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\FWIN\file-op.c"
+				RelativePath="..促src促FWIN促file-op.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -542,7 +542,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sound\flt_rc.c"
+				RelativePath="..促src促snddrv促src促sound促flt_rc.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -564,7 +564,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sound\flt_vol.c"
+				RelativePath="..促src促snddrv促src促sound促flt_vol.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -586,7 +586,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sound\fm.c"
+				RelativePath="..促src促snddrv促src促sound促fm.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -608,7 +608,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\fmgen\fmgen.cpp"
+				RelativePath="..促src促fmgen促fmgen.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -630,7 +630,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\fmgen\fmtimer.cpp"
+				RelativePath="..促src促fmgen促fmtimer.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -652,7 +652,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\getconf.c"
+				RelativePath="..促src促getconf.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -674,7 +674,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\WIN32\graph.c"
+				RelativePath="..促src促WIN32促graph.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -696,7 +696,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\image.c"
+				RelativePath="..促src促image.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -718,7 +718,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\intr.c"
+				RelativePath="..促src促intr.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -740,7 +740,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\keyboard.c"
+				RelativePath="..促src促keyboard.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -762,7 +762,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\WIN32\main.c"
+				RelativePath="..促src促WIN32促main.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -784,7 +784,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\quasi88\mame-quasi88.c"
+				RelativePath="..促src促snddrv促quasi88促mame-quasi88.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -806,7 +806,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\memory.c"
+				RelativePath="..促src促memory.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -828,7 +828,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\menu-screen.c"
+				RelativePath="..促src促menu-screen.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -850,7 +850,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\menu.c"
+				RelativePath="..促src促menu.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -872,7 +872,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\WIN32\menubar.c"
+				RelativePath="..促src促WIN32促menubar.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -894,7 +894,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\monitor.c"
+				RelativePath="..促src促monitor.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -916,7 +916,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\fmgen\opna.cpp"
+				RelativePath="..促src促fmgen促opna.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -938,7 +938,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\pause.c"
+				RelativePath="..促src促pause.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -960,7 +960,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\pc88main.c"
+				RelativePath="..促src促pc88main.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -982,7 +982,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\pc88sub.c"
+				RelativePath="..促src促pc88sub.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1004,7 +1004,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\pio.c"
+				RelativePath="..促src促pio.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1026,7 +1026,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\fmgen\psg.cpp"
+				RelativePath="..促src促fmgen促psg.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1048,7 +1048,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\q8tk-glib.c"
+				RelativePath="..促src促q8tk-glib.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1070,7 +1070,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\q8tk.c"
+				RelativePath="..促src促q8tk.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1092,7 +1092,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\quasi88.c"
+				RelativePath="..促src促quasi88.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1114,7 +1114,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\restrack.c"
+				RelativePath="..促src促snddrv促src促restrack.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1136,7 +1136,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\romaji.c"
+				RelativePath="..促src促romaji.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1158,7 +1158,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sound\samples.c"
+				RelativePath="..促src促snddrv促src促sound促samples.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1180,7 +1180,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\screen-16bpp.c"
+				RelativePath="..促src促screen-16bpp.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1202,7 +1202,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\screen-32bpp.c"
+				RelativePath="..促src促screen-32bpp.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1224,7 +1224,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\screen-8bpp.c"
+				RelativePath="..促src促screen-8bpp.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1246,7 +1246,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\screen-snapshot.c"
+				RelativePath="..促src促screen-snapshot.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1268,7 +1268,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\screen.c"
+				RelativePath="..促src促screen.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1290,7 +1290,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snapshot.c"
+				RelativePath="..促src促snapshot.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1312,7 +1312,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sndintrf.c"
+				RelativePath="..促src促snddrv促src促sndintrf.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1334,7 +1334,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sound.c"
+				RelativePath="..促src促snddrv促src促sound.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1356,7 +1356,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\soundbd.c"
+				RelativePath="..促src促soundbd.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1378,7 +1378,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\status.c"
+				RelativePath="..促src促status.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1400,7 +1400,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\streams.c"
+				RelativePath="..促src促snddrv促src促streams.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1422,7 +1422,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\suspend.c"
+				RelativePath="..促src促suspend.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1444,7 +1444,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\WIN32\wait.c"
+				RelativePath="..促src促WIN32促wait.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1466,7 +1466,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sound\wavwrite.c"
+				RelativePath="..促src促snddrv促src促sound促wavwrite.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1488,7 +1488,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\snddrv\src\sound\ymdeltat.c"
+				RelativePath="..促src促snddrv促src促sound促ymdeltat.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1510,7 +1510,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\z80-debug.c"
+				RelativePath="..促src促z80-debug.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1532,7 +1532,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\src\z80.c"
+				RelativePath="..促src促z80.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -1559,7 +1559,7 @@
 			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 			>
 			<File
-				RelativePath="..\src\WIN32\quasi88.rc"
+				RelativePath="..促src促WIN32促quasi88.rc"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"

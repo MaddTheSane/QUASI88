@@ -1,24 +1,24 @@
 # Microsoft Developer Studio Project File - Name="QUASI88_win32" - Package Owner=<4>
 # Microsoft Developer Studio Generated Build File, Format Version 6.00
-# ** �ҏW���Ȃ��ł������� **
+# ** 編集しないでください **
 
 # TARGTYPE "Win32 (x86) Application" 0x0101
 
 CFG=QUASI88_win32 - Win32 Debug
-!MESSAGE ����͗L����Ҳ�̧�قł͂���܂���B ������ۼު�Ă�����ނ��邽�߂ɂ� NMAKE ���g�p���Ă��������B
-!MESSAGE [Ҳ�̧�ق̴���߰�] ����ނ��g�p���Ď��s���Ă�������
+!MESSAGE これは有効なﾒｲｸﾌｧｲﾙではありません。 このﾌﾟﾛｼﾞｪｸﾄをﾋﾞﾙﾄﾞするためには NMAKE を使用してください。
+!MESSAGE [ﾒｲｸﾌｧｲﾙのｴｸｽﾎﾟｰﾄ] ｺﾏﾝﾄﾞを使用して実行してください
 !MESSAGE 
 !MESSAGE NMAKE /f "QUASI88_win32.mak".
 !MESSAGE 
-!MESSAGE NMAKE �̎��s���ɍ\�����w��ł��܂�
-!MESSAGE ����� ײݏ��ϸۂ̐ݒ���`���܂��B��:
+!MESSAGE NMAKE の実行時に構成を指定できます
+!MESSAGE ｺﾏﾝﾄﾞ ﾗｲﾝ上でﾏｸﾛの設定を定義します。例:
 !MESSAGE 
 !MESSAGE NMAKE /f "QUASI88_win32.mak" CFG="QUASI88_win32 - Win32 Debug"
 !MESSAGE 
-!MESSAGE �I���\������� Ӱ��:
+!MESSAGE 選択可能なﾋﾞﾙﾄﾞ ﾓｰﾄﾞ:
 !MESSAGE 
-!MESSAGE "QUASI88_win32 - Win32 Debug" ("Win32 (x86) Application" �p)
-!MESSAGE "QUASI88_win32 - Win32 Release" ("Win32 (x86) Application" �p)
+!MESSAGE "QUASI88_win32 - Win32 Debug" ("Win32 (x86) Application" 用)
+!MESSAGE "QUASI88_win32 - Win32 Release" ("Win32 (x86) Application" 用)
 !MESSAGE 
 
 # Begin Project
@@ -43,7 +43,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /YX /FD /GZ /c
-# ADD CPP /nologo /W3 /Gm /GX /ZI /Od /I "..\src" /I "..\src\FWIN" /I "..\src\WIN32" /I "..\src\snddrv" /I "..\src\snddrv\quasi88" /I "..\src\snddrv\src" /I "..\src\snddrv\src\sound" /I "..\src\fmgen" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "USE_SOUND" /D "USE_FMGEN" /D "DEBUGPRINTF" /Fp"win32/Debug/QUASI88win32.pch" /YX /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GX /ZI /Od /I "..¥src" /I "..¥src¥FWIN" /I "..¥src¥WIN32" /I "..¥src¥snddrv" /I "..¥src¥snddrv¥quasi88" /I "..¥src¥snddrv¥src" /I "..¥src¥snddrv¥src¥sound" /I "..¥src¥fmgen" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "USE_SOUND" /D "USE_FMGEN" /D "DEBUGPRINTF" /Fp"win32/Debug/QUASI88win32.pch" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x411 /d "_DEBUG"
@@ -69,7 +69,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /YX /FD /c
-# ADD CPP /nologo /W3 /GX /O2 /I "..\src" /I "..\src\FWIN" /I "..\src\WIN32" /I "..\src\snddrv" /I "..\src\snddrv\quasi88" /I "..\src\snddrv\src" /I "..\src\snddrv\src\sound" /I "..\src\fmgen" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "USE_SOUND" /D "USE_FMGEN" /Fp"win32/Release/QUASI88win32.pch" /YX /FD /c
+# ADD CPP /nologo /W3 /GX /O2 /I "..¥src" /I "..¥src¥FWIN" /I "..¥src¥WIN32" /I "..¥src¥snddrv" /I "..¥src¥snddrv¥quasi88" /I "..¥src¥snddrv¥src" /I "..¥src¥snddrv¥src¥sound" /I "..¥src¥fmgen" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "USE_SOUND" /D "USE_FMGEN" /Fp"win32/Release/QUASI88win32.pch" /YX /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x411 /d "NDEBUG"
@@ -92,247 +92,247 @@ LINK32=link.exe
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 # Begin Source File
 
-SOURCE=..\src\snddrv\quasi88\2203fmgen.cpp
+SOURCE=..¥src¥snddrv¥quasi88¥2203fmgen.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sound\2203intf.c
+SOURCE=..¥src¥snddrv¥src¥sound¥2203intf.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\quasi88\2608fmgen.cpp
+SOURCE=..¥src¥snddrv¥quasi88¥2608fmgen.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sound\2608intf.c
+SOURCE=..¥src¥snddrv¥src¥sound¥2608intf.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\WIN32\audio.c
+SOURCE=..¥src¥WIN32¥audio.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sound\ay8910.c
+SOURCE=..¥src¥snddrv¥src¥sound¥ay8910.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\basic.c
+SOURCE=..¥src¥basic.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\quasi88\beep.c
+SOURCE=..¥src¥snddrv¥quasi88¥beep.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\quasi88\beepintf.c
+SOURCE=..¥src¥snddrv¥quasi88¥beepintf.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\crtcdmac.c
+SOURCE=..¥src¥crtcdmac.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\driver.c
+SOURCE=..¥src¥snddrv¥src¥driver.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\emu.c
+SOURCE=..¥src¥emu.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\WIN32\event.c
+SOURCE=..¥src¥WIN32¥event.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\fdc.c
+SOURCE=..¥src¥fdc.c
 # End Source File
 # Begin Source File
 
-SOURCE="..\src\FWIN\file-op.c"
+SOURCE="..¥src¥FWIN¥file-op.c"
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sound\flt_rc.c
+SOURCE=..¥src¥snddrv¥src¥sound¥flt_rc.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sound\flt_vol.c
+SOURCE=..¥src¥snddrv¥src¥sound¥flt_vol.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sound\fm.c
+SOURCE=..¥src¥snddrv¥src¥sound¥fm.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\fmgen\fmgen.cpp
+SOURCE=..¥src¥fmgen¥fmgen.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\fmgen\fmtimer.cpp
+SOURCE=..¥src¥fmgen¥fmtimer.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\getconf.c
+SOURCE=..¥src¥getconf.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\WIN32\graph.c
+SOURCE=..¥src¥WIN32¥graph.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\image.c
+SOURCE=..¥src¥image.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\intr.c
+SOURCE=..¥src¥intr.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\keyboard.c
+SOURCE=..¥src¥keyboard.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\WIN32\main.c
+SOURCE=..¥src¥WIN32¥main.c
 # End Source File
 # Begin Source File
 
-SOURCE="..\src\snddrv\quasi88\mame-quasi88.c"
+SOURCE="..¥src¥snddrv¥quasi88¥mame-quasi88.c"
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\memory.c
+SOURCE=..¥src¥memory.c
 # End Source File
 # Begin Source File
 
-SOURCE="..\src\menu-screen.c"
+SOURCE="..¥src¥menu-screen.c"
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\menu.c
+SOURCE=..¥src¥menu.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\WIN32\menubar.c
+SOURCE=..¥src¥WIN32¥menubar.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\monitor.c
+SOURCE=..¥src¥monitor.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\fmgen\opna.cpp
+SOURCE=..¥src¥fmgen¥opna.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\pause.c
+SOURCE=..¥src¥pause.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\pc88main.c
+SOURCE=..¥src¥pc88main.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\pc88sub.c
+SOURCE=..¥src¥pc88sub.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\pio.c
+SOURCE=..¥src¥pio.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\fmgen\psg.cpp
+SOURCE=..¥src¥fmgen¥psg.cpp
 # End Source File
 # Begin Source File
 
-SOURCE="..\src\q8tk-glib.c"
+SOURCE="..¥src¥q8tk-glib.c"
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\q8tk.c
+SOURCE=..¥src¥q8tk.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\quasi88.c
+SOURCE=..¥src¥quasi88.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\restrack.c
+SOURCE=..¥src¥snddrv¥src¥restrack.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\romaji.c
+SOURCE=..¥src¥romaji.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sound\samples.c
+SOURCE=..¥src¥snddrv¥src¥sound¥samples.c
 # End Source File
 # Begin Source File
 
-SOURCE="..\src\screen-16bpp.c"
+SOURCE="..¥src¥screen-16bpp.c"
 # End Source File
 # Begin Source File
 
-SOURCE="..\src\screen-32bpp.c"
+SOURCE="..¥src¥screen-32bpp.c"
 # End Source File
 # Begin Source File
 
-SOURCE="..\src\screen-8bpp.c"
+SOURCE="..¥src¥screen-8bpp.c"
 # End Source File
 # Begin Source File
 
-SOURCE="..\src\screen-snapshot.c"
+SOURCE="..¥src¥screen-snapshot.c"
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\screen.c
+SOURCE=..¥src¥screen.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snapshot.c
+SOURCE=..¥src¥snapshot.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sndintrf.c
+SOURCE=..¥src¥snddrv¥src¥sndintrf.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sound.c
+SOURCE=..¥src¥snddrv¥src¥sound.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\soundbd.c
+SOURCE=..¥src¥soundbd.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\status.c
+SOURCE=..¥src¥status.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\streams.c
+SOURCE=..¥src¥snddrv¥src¥streams.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\suspend.c
+SOURCE=..¥src¥suspend.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\WIN32\wait.c
+SOURCE=..¥src¥WIN32¥wait.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sound\wavwrite.c
+SOURCE=..¥src¥snddrv¥src¥sound¥wavwrite.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\snddrv\src\sound\ymdeltat.c
+SOURCE=..¥src¥snddrv¥src¥sound¥ymdeltat.c
 # End Source File
 # Begin Source File
 
-SOURCE="..\src\z80-debug.c"
+SOURCE="..¥src¥z80-debug.c"
 # End Source File
 # Begin Source File
 
-SOURCE=..\src\z80.c
+SOURCE=..¥src¥z80.c
 # End Source File
 # End Group
 # Begin Group "Header Files"
@@ -344,7 +344,7 @@ SOURCE=..\src\z80.c
 # PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 # Begin Source File
 
-SOURCE=..\src\WIN32\quasi88.rc
+SOURCE=..¥src¥WIN32¥quasi88.rc
 # End Source File
 # End Group
 # End Target
