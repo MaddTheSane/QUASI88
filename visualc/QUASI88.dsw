@@ -1,9 +1,9 @@
 Microsoft Developer Studio Workspace File, Format Version 6.00
-# Œx: ‚±‚ÌÜ°¸½Íß°½ Ì§²Ù ‚ğ•ÒW‚Ü‚½‚Ííœ‚µ‚È‚¢‚Å‚­‚¾‚³‚¢!
+# è­¦å‘Š: ã“ã®ï¾œï½°ï½¸ï½½ï¾ï¾Ÿï½°ï½½ ï¾Œï½§ï½²ï¾™ ã‚’ç·¨é›†ã¾ãŸã¯å‰Šé™¤ã—ãªã„ã§ãã ã•ã„!
 
 ###############################################################################
 
-Project: "QUASI88_sdl"=.\QUASI88_sdl.dsp - Package Owner=<4>
+Project: "QUASI88_sdl"=.Â¥QUASI88_sdl.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -15,7 +15,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "QUASI88_win32"=.\QUASI88_win32.dsp - Package Owner=<4>
+Project: "QUASI88_win32"=.Â¥QUASI88_win32.dsp - Package Owner=<4>
 
 Package=<5>
 {{{

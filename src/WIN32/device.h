@@ -7,7 +7,7 @@
 
 
 /*
- *	src/WIN32/ �ʲ��ǤΥ������Х��ѿ�
+ *	src/WIN32/ 莉･荳九〒縺ｮ繧ｰ繝ｭ繝ｼ繝舌Ν螟画焚
  */
 extern	HINSTANCE	g_hInstance;
 extern	HWND		g_hWnd;
@@ -21,7 +21,7 @@ extern	FILE		*debugfp;
 
 
 /*
- *	src/WIN32/ �ʲ��ǤΥ������Х��ѿ� (���ץ���������ǽ���ѿ�)
+ *	src/WIN32/ 莉･荳九〒縺ｮ繧ｰ繝ｭ繝ｼ繝舌Ν螟画焚 (繧ｪ繝励す繝ｧ繝ｳ險ｭ螳壼庄閭ｽ縺ｪ螟画焚)
  */
 
 

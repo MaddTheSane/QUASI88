@@ -2,12 +2,12 @@
 #define PC88SUB_H_INCLUDED
 
 
-	/**** �ѿ� ****/
+	/**** 螟画焚 ****/
 
 extern	int	sub_load_rate;
 
 
-	/**** �ؿ� ****/
+	/**** 髢｢謨ｰ ****/
 
 
 void	pc88sub_init( int init );
