@@ -1,4 +1,4 @@
-﻿/***********************************************************************
+/***********************************************************************
  * イベント処理 (システム依存)
  *
  *	詳細は、 event.h 参照
@@ -13,6 +13,7 @@
 
 #include "device.h"
 #include <stdio.h>
+#include "OldCarbHeaders.h"
 
 #include "quasi88.h"
 #include "keyboard.h"
@@ -37,7 +38,7 @@
 +------+---+---+---+---+---+---+---+---+---+---+---+--------+ +---+---+---+---+
 |SHIFT |Z  |X  |C  |V  |B  |N  |M  |,  |.  |/  |_  |   SHIFT| |1  |2  |3  |Ent|
 +----+------+---+----+-----------+----+-----+---+---+---+---+ +---+---+---+ er|
-|Caps|Option|Cmd|英数|           |カナ|Enter|← |→ |↓ |↑ | |0  |,  |.  |   |
+|Caps|Option|Cmd|英数 |           |カナ |Enter|←  |→  |↓  |↑  | |0  |,  |.  |   |
 +----+------+---+----+-----------+----+-----+---+---+---+---+ +---+---+---+---+
 
                     +---------+
@@ -65,10 +66,10 @@ Assign? ... help, stop, copy, rollup, rolldown, f1..f5
 +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+ +---+---+---+
 +---+ +----+ +-----+                                +---+     +---+---+---+
 | 32| |  3B| |   34|                                | 7E|     | 72| 73| 74|
-|`  | |CTRL| |Enter|                                |↑ |     |Ins|Hom|Pup|
+|`  | |CTRL| |Enter|                                | ↑ |     |Ins|Hom|Pup|
 +---+ +----+ +-----+                            +---+---+---+ +---+---+---+
                                                 | 7B| 7D| 7C| | 75| 77| 79|
-                                                |← |↓ |→ | |Del|End|Pdn|
+                                                | ← | ↓ | → | |Del|End|Pdn|
                                                 +---+---+---+ +---+---+---+
 */							 
 
@@ -283,8 +284,8 @@ void	event_update(void)
 
 				/* その他装飾キー、文字キーは GetKeys で監視 */
 	    GetKeys(keys);
-	    if ((keys[0] != last_keys[0]) || (keys[1] != last_keys[1]) ||
-		(keys[2] != last_keys[2]) || (keys[3] != last_keys[3])) {
+	    if ((keys[0].bigEndianValue != last_keys[0].bigEndianValue) || (keys[1].bigEndianValue != last_keys[1].bigEndianValue) ||
+		(keys[2].bigEndianValue != last_keys[2].bigEndianValue) || (keys[3].bigEndianValue != last_keys[3].bigEndianValue)) {
 		int old_bit, new_bit;
 
 		for (i=0; i<128; ++i) {
@@ -348,7 +349,7 @@ void	event_update(void)
 		    GrafPtr saveport;
 		    GetPort(&saveport);
 		    {
-			SetPort(macWin);
+			SetPortWindowPort(macWin);
 			GlobalToLocal(&event.where);
 		    }
 		    SetPort(saveport);
@@ -364,7 +365,7 @@ void	event_update(void)
 	    case inDrag:
 		if (quasi88_is_exec()) xmame_sound_suspend();
 		{
-		    DragWindow(macWin, event.where, &macQd.screenBits.bounds);
+			DragWindow(macWin, event.where, NULL);
 		}
 		if (quasi88_is_exec()) xmame_sound_resume();
 		break;
@@ -382,7 +383,7 @@ void	event_update(void)
 		GrafPtr saveport;
 		GetPort(&saveport);
 		{
-		    SetPort(macWin);
+		    SetPortWindowPort(macWin);
 		    GlobalToLocal(&event.where);
 		}
 		SetPort(saveport);
@@ -412,9 +413,9 @@ void	event_update(void)
 		case 0x01:  kon[6] = 1; quasi88_key_pressed(KEY88_STOP);	break;	/* Cmd + S */
 		case 0x04:  kon[7] = 1; quasi88_key_pressed(KEY88_HELP);	break;	/* Cmd + H */
 		case 0x7e:
-		case 0x3e:  kon[8] = 1; quasi88_key_pressed(KEY88_ROLLUP);	break;	/* Cmd +↑ */
+		case 0x3e:  kon[8] = 1; quasi88_key_pressed(KEY88_ROLLUP);	break;	/* Cmd + ↑ */
 		case 0x7d:
-		case 0x3d:  kon[9] = 1; quasi88_key_pressed(KEY88_ROLLDOWN);	break;	/* Cmd +↓ */
+		case 0x3d:  kon[9] = 1; quasi88_key_pressed(KEY88_ROLLDOWN);	break;	/* Cmd + ↓ */
 		case 0x2e:  kon[10]= 1; quasi88_key_pressed(KEY88_F12);		break;	/* Cmd + M */
 		}
 	    }
@@ -433,9 +434,9 @@ void	event_update(void)
 		case 0x01: if (kon[6]) { kon[6] = 0; quasi88_key_released(KEY88_STOP); }	break;	/* Cmd + S */
 		case 0x04: if (kon[7]) { kon[7] = 0; quasi88_key_released(KEY88_HELP); }	break;	/* Cmd + H */
 		case 0x7e:
-		case 0x3e: if (kon[8]) { kon[8] = 0; quasi88_key_released(KEY88_ROLLUP); }	break;	/* Cmd +↑ */
+		case 0x3e: if (kon[8]) { kon[8] = 0; quasi88_key_released(KEY88_ROLLUP); }	break;	/* Cmd + ↑ */
 		case 0x7d:
-		case 0x3d: if (kon[9]) { kon[9] = 0; quasi88_key_released(KEY88_ROLLDOWN); }	break;	/* Cmd +↓ */
+		case 0x3d: if (kon[9]) { kon[9] = 0; quasi88_key_released(KEY88_ROLLDOWN); }	break;	/* Cmd + ↓ */
 		case 0x2e: if (kon[10]){ kon[10]= 0; quasi88_key_released(KEY88_F12); }		break;	/* Cmd + M */
 		}
 	    }
@@ -540,4 +541,4 @@ int	event_get_joystick_num(void)
  ******************************************************************************
  *****************************************************************************/
 
-#include "menubar.c"
+//#include "menubar.c"

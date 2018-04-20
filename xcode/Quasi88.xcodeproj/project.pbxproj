@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		556898E8208A6BBB0013A224 /* event.c in Sources */ = {isa = PBXBuildFile; fileRef = 55EC4B5C2089891E001F3EC0 /* event.c */; };
 		55C953091EB92E6C00E16DB7 /* audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 55C953071EB92E4700E16DB7 /* audio.c */; };
 		55C953131EB93C0900E16DB7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C953121EB93C0900E16DB7 /* Cocoa.framework */; };
 		55CD7EFE1EB853B500640CE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CD7EFD1EB853B500640CE3 /* Assets.xcassets */; };
@@ -87,7 +88,6 @@
 		55EC4B56208984AC001F3EC0 /* graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 55CD7FBA1EB85EA300640CE3 /* graph.c */; };
 		55EC4B57208984CE001F3EC0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 55CD7FBB1EB85EA300640CE3 /* main.c */; };
 		55EC4B58208984D5001F3EC0 /* menubar.c in Sources */ = {isa = PBXBuildFile; fileRef = 55CD7FBC1EB85EA300640CE3 /* menubar.c */; };
-		55EC4B5B20898853001F3EC0 /* event-IOKit.c in Sources */ = {isa = PBXBuildFile; fileRef = 55EC4B5A20898853001F3EC0 /* event-IOKit.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -876,7 +876,6 @@
 				55CD80581EB8706700640CE3 /* streams.c in Sources */,
 				55CD80711EB8706700640CE3 /* sysdep_sound_stream.c in Sources */,
 				55CD7F981EB854B900640CE3 /* menu.c in Sources */,
-				55EC4B5B20898853001F3EC0 /* event-IOKit.c in Sources */,
 				55CD804D1EB8706700640CE3 /* sndintrf.c in Sources */,
 				55CD7FA01EB854B900640CE3 /* pc88main.c in Sources */,
 				55CD7FA81EB854B900640CE3 /* screen-16bpp.c in Sources */,
@@ -892,6 +891,7 @@
 				55CD806E1EB8706700640CE3 /* rc.c in Sources */,
 				55CD80531EB8706700640CE3 /* fm.c in Sources */,
 				55EC4B57208984CE001F3EC0 /* main.c in Sources */,
+				556898E8208A6BBB0013A224 /* event.c in Sources */,
 				55CD7FA51EB854B900640CE3 /* quasi88.c in Sources */,
 				55CD7F951EB854B900640CE3 /* keyboard.c in Sources */,
 				55CD80561EB8706700640CE3 /* ymdeltat.c in Sources */,
