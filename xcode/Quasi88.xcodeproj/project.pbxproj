@@ -87,7 +87,7 @@
 		55EC4B56208984AC001F3EC0 /* graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 55CD7FBA1EB85EA300640CE3 /* graph.c */; };
 		55EC4B57208984CE001F3EC0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 55CD7FBB1EB85EA300640CE3 /* main.c */; };
 		55EC4B58208984D5001F3EC0 /* menubar.c in Sources */ = {isa = PBXBuildFile; fileRef = 55CD7FBC1EB85EA300640CE3 /* menubar.c */; };
-		55EC4B5920898733001F3EC0 /* event.c in Sources */ = {isa = PBXBuildFile; fileRef = 55CD7F3F1EB854B900640CE3 /* event.c */; };
+		55EC4B5B20898853001F3EC0 /* event-IOKit.c in Sources */ = {isa = PBXBuildFile; fileRef = 55EC4B5A20898853001F3EC0 /* event-IOKit.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -332,6 +332,8 @@
 		55CD807F1EB87E8200640CE3 /* audio.c */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.c; path = audio.c; sourceTree = "<group>"; };
 		55CD80801EB87E8200640CE3 /* audio.h */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
 		55CD80811EB87E8200640CE3 /* sdl.c */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.c; path = sdl.c; sourceTree = "<group>"; };
+		55EC4B5A20898853001F3EC0 /* event-IOKit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "event-IOKit.c"; sourceTree = "<group>"; };
+		55EC4B5C2089891E001F3EC0 /* event.c */ = {isa = PBXFileReference; fileEncoding = 3; lastKnownFileType = sourcecode.c.c; path = event.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +457,8 @@
 				55CD7FC71EB862B900640CE3 /* OldCarbHeaders.h */,
 				55CD7FB71EB85EA300640CE3 /* config.h */,
 				55CD7FB81EB85EA300640CE3 /* device.h */,
+				55EC4B5C2089891E001F3EC0 /* event.c */,
+				55EC4B5A20898853001F3EC0 /* event-IOKit.c */,
 				55CD7FBA1EB85EA300640CE3 /* graph.c */,
 				55CD7FBB1EB85EA300640CE3 /* main.c */,
 				55CD7FBC1EB85EA300640CE3 /* menubar.c */,
@@ -846,7 +850,6 @@
 				55CD804C1EB8706700640CE3 /* restrack.c in Sources */,
 				55CD80541EB8706700640CE3 /* samples.c in Sources */,
 				55CD80421EB8706700640CE3 /* 2203fmgen.cpp in Sources */,
-				55EC4B5920898733001F3EC0 /* event.c in Sources */,
 				55CD7FAE1EB854B900640CE3 /* status.c in Sources */,
 				55CD80431EB8706700640CE3 /* 2608fmgen.cpp in Sources */,
 				55CD80451EB8706700640CE3 /* beepintf.c in Sources */,
@@ -869,6 +872,7 @@
 				55CD80581EB8706700640CE3 /* streams.c in Sources */,
 				55CD80711EB8706700640CE3 /* sysdep_sound_stream.c in Sources */,
 				55CD7F981EB854B900640CE3 /* menu.c in Sources */,
+				55EC4B5B20898853001F3EC0 /* event-IOKit.c in Sources */,
 				55CD804D1EB8706700640CE3 /* sndintrf.c in Sources */,
 				55CD7FA01EB854B900640CE3 /* pc88main.c in Sources */,
 				55CD7FA81EB854B900640CE3 /* screen-16bpp.c in Sources */,
