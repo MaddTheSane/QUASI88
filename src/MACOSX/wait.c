@@ -5,12 +5,11 @@
  ************************************************************************/
 
 #include "quasi88.h"
-
 #include "device.h"
-#include <OSUtils.h>
-
 #include "wait.h"
 
+#include <CoreServices/CoreServices.h>
+#include <mach/mach_time.h>
 
 
 /*---------------------------------------------------------------------------*/
@@ -26,20 +25,17 @@ static	int	wait_count_max = 10;		/* これ以上連続オーバーしたら
    おかしなものになる (ウェイト時間が変になる) 。
    できれば 64bit型(long long)にしたいけど、どこか定義されてない ? */
 
-#if	0
-typedef	long long	T_WAIT_TICK;
-#else
-typedef	long		T_WAIT_TICK;
-#endif
+typedef	uint64_t T_WAIT_TICK;
 
 static	T_WAIT_TICK	next_time;		/* 次フレームの時刻 */
 static	T_WAIT_TICK	delta_time;		/* 1 フレームの時間 */
+static mach_timebase_info_data_t tbInfo;
 
 
 
 /* ---- 現在時刻を取得する (usec単位) ---- */
 
-#define	GET_TICK()	( (T_WAIT_TICK)TickCount() * 1000000/60 )
+#define	GET_TICK()	( (T_WAIT_TICK)mach_absolute_time() )
 
 
 
@@ -50,6 +46,8 @@ static	T_WAIT_TICK	delta_time;		/* 1 フレームの時間 */
  *****************************************************************************/
 int	wait_vsync_init(void)
 {
+	mach_timebase_info(&tbInfo);
+
     return TRUE;
 }
 
@@ -81,28 +79,27 @@ void	wait_vsync_setup(long vsync_cycle_us, int do_sleep)
  *****************************************************************************/
 int	wait_vsync_update(void)
 {
-    int on_time = FALSE;
+    bool on_time = FALSE;
     T_WAIT_TICK diff_us;
 
 
     diff_us = next_time - GET_TICK();
 
-    if (diff_us > 0) {			/* 遅れてない(時間が余っている)なら */
-
+	if (diff_us > 0) {			/* 遅れてない(時間が余っている)なら */
+		
 #if 0					/* ビジーウェイトするとこける？  */
-	while (GET_TICK() <= next_time)
-	    ;
-
+		while (GET_TICK() <= next_time)
+			;
+		
 #else					/* Delay してみる・・・ */
-	UInt32 unused;
-	diff_us = diff_us * 60 / 1000000;
-	if (diff_us) {
-	    Delay(diff_us,&unused);
-	}
+		diff_us = diff_us * 60 / 1000000 * tbInfo.numer / tbInfo.denom;
+		if (diff_us) {
+			mach_wait_until(diff_us);
+		}
 #endif
-
-	on_time = TRUE;
-    }
+		
+		on_time = TRUE;
+	}
 
 
     /* 次フレーム時刻を算出 */

@@ -312,7 +312,7 @@ static void check_radio_item(int subMenu, int start, int end, int uItem)
     int i;
 
     for (i = start; i <= end; i++) {
-	CheckItem(GetMenuRef(subMenu), i, (i == uItem));
+	CheckMenuItem(GetMenuRef(subMenu), i, (i == uItem));
     }
 }
 
@@ -336,6 +336,7 @@ static void change_menuitem_label(int subMenu, int uItem, char *s)
 /* ファイルを開く ダイアログ */
 static Boolean openGetFile(FSSpec *file)
 {
+#if 0
     StandardFileReply reply;
 
     StandardGetFile(NULL, -1, NULL, &reply); 
@@ -345,12 +346,16 @@ static Boolean openGetFile(FSSpec *file)
     } else {
 	return false;
     }
+#else
+	return false;
+#endif
 }
 
 
 /* ファイルを保存ダイアログ */
 static Boolean openPutFile(FSSpec *file)
 {
+#if 0
     StandardFileReply reply;
 
     StandardPutFile((const unsigned char *)"",
@@ -361,6 +366,9 @@ static Boolean openPutFile(FSSpec *file)
     } else {
 	return false;
     }
+#else
+	return false;
+#endif
 }
 
 
@@ -453,13 +461,13 @@ static void update_drive(void)
 		my_strncat(buf, drive[drv].image[i].name, sizeof(buf));
 
 		change_menuitem_label(base, uItem, buf);
-		EnableItem(GetMenuRef(base), uItem);
+		EnableMenuItem(GetMenuRef(base), uItem);
 	    }
 	    for (   ; i<9; i++) {
 		uItem = i + 1;
 		sprintf(buf, "%d  nonexistant", i + 1);
 		change_menuitem_label(base, uItem, buf);
-		DisableItem(GetMenuRef(base), uItem);
+		DisableMenuItem(GetMenuRef(base), uItem);
 	    }
 	    has_image = TRUE;
 
@@ -470,7 +478,7 @@ static void update_drive(void)
 		uItem = i + 1;
 		sprintf(buf, "%d  nonexistant", i + 1);
 		change_menuitem_label(base, uItem, buf);
-		DisableItem(GetMenuRef(base), uItem);
+		DisableMenuItem(GetMenuRef(base), uItem);
 	    }
 	}
 
@@ -509,10 +517,10 @@ static void update_drive(void)
 
     if (has_image) {
 	change_menuitem_label(M_DRV, M_DRV_CHG, "Change ...");
-	EnableItem(GetMenuRef(M_DRV), M_DRV_UNSET);
+	EnableMenuItem(GetMenuRef(M_DRV), M_DRV_UNSET);
     } else {
 	change_menuitem_label(M_DRV, M_DRV_CHG, "Set ...");
-	DisableItem(GetMenuRef(M_DRV), M_DRV_UNSET);
+	DisableMenuItem(GetMenuRef(M_DRV), M_DRV_UNSET);
     }
 }
 
@@ -535,12 +543,12 @@ static void update_misc_cload(void)
 
     /* テープありなら、ラジオメニューをアクティブに */
     uItem = M_MISC_CLOAD_S;
-    CheckItem(GetMenuRef(M_MISC_CLOAD), uItem, (s) ? true : false);
+    CheckMenuItem(GetMenuRef(M_MISC_CLOAD), uItem, (s) ? true : false);
 
     /* テープありなら unset を表示、なしなら隠す */
     uItem = M_MISC_CLOAD_U;
-    if (s) { EnableItem(GetMenuRef(M_MISC_CLOAD), uItem); }
-    else   { DisableItem(GetMenuRef(M_MISC_CLOAD), uItem); }
+    if (s) { EnableMenuItem(GetMenuRef(M_MISC_CLOAD), uItem); }
+    else   { DisableMenuItem(GetMenuRef(M_MISC_CLOAD), uItem); }
 }
 
 /* Tape Save メニューアイテムのラベルを変えたり使用不可にしたり */
@@ -562,12 +570,12 @@ static void update_misc_csave(void)
 
     /* テープありなら、ラジオメニューをアクティブに */
     uItem = M_MISC_CSAVE_S;
-    CheckItem(GetMenuRef(M_MISC_CSAVE), uItem, (s) ? true : false);
+    CheckMenuItem(GetMenuRef(M_MISC_CSAVE), uItem, (s) ? true : false);
 
     /* テープありなら unset を表示、なしなら隠す */
     uItem = M_MISC_CSAVE_U;
-    if (s) { EnableItem(GetMenuRef(M_MISC_CSAVE), uItem); }
-    else   { DisableItem(GetMenuRef(M_MISC_CSAVE), uItem); }
+    if (s) { EnableMenuItem(GetMenuRef(M_MISC_CSAVE), uItem); }
+    else   { DisableMenuItem(GetMenuRef(M_MISC_CSAVE), uItem); }
 }
 
 /* Sound Record メニューアイテムのチェックを変更する */
@@ -578,7 +586,7 @@ static void update_misc_record(void)
 
     i = xmame_wavout_opened();
     uItem = M_MISC_RECORD;
-    CheckItem(GetMenuRef(M_MISC), uItem, (i ? true : false));
+    CheckMenuItem(GetMenuRef(M_MISC), uItem, (i ? true : false));
 }
 
 
@@ -589,7 +597,7 @@ static void update_misc_record(void)
  *======================================================================*/
 static void menubar_item_setup(void)
 {
-    int uItem;
+    int uItem = M_SYS_MODE_V2;
     int i;
 
     /* System -----------------------------------------------------------*/
@@ -633,7 +641,7 @@ static void menubar_item_setup(void)
 
     i = quasi88_cfg_now_no_wait();				/* ＊＊＊＊ */
     uItem = M_SET_SPD_MAX;
-    CheckItem(GetMenuRef(M_SET_SPD), uItem, (i ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET_SPD), uItem, (i ? true : false));
 
     i = cpu_timing;						/* ＊＊＊＊ */
     switch (i) {
@@ -646,7 +654,7 @@ static void menubar_item_setup(void)
 
     i = fdc_wait;						/* ＊＊＊＊ */
     uItem = M_SET_FDCWAIT;
-    CheckItem(GetMenuRef(M_SET), uItem, (i ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET), uItem, (i ? true : false));
 
     i = quasi88_cfg_now_frameskip_rate();			/* ＊＊＊＊ */
     switch (i) {
@@ -677,11 +685,11 @@ static void menubar_item_setup(void)
 
     i = quasi88_cfg_now_fullscreen();				/* ＊＊＊＊ */
     uItem = M_SET_FUL;
-    CheckItem(GetMenuRef(M_SET), uItem, (i ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET), uItem, (i ? true : false));
 
     i = use_pcg;						/* ＊＊＊＊ */
     uItem = M_SET_PCG;
-    CheckItem(GetMenuRef(M_SET), uItem, (i ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET), uItem, (i ? true : false));
 
     i = mouse_mode;						/* ＊＊＊＊ */
     switch (i) {
@@ -703,11 +711,11 @@ static void menubar_item_setup(void)
 
     i = numlock_emu;						/* ＊＊＊＊ */
     uItem = M_SET_NUMLOCK;
-    CheckItem(GetMenuRef(M_SET), uItem, (i ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET), uItem, (i ? true : false));
 
     i = romaji_input_mode;					/* ＊＊＊＊ */
     uItem = M_SET_ROMAJI;
-    CheckItem(GetMenuRef(M_SET), uItem, (i ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET), uItem, (i ? true : false));
 
 #ifdef	USE_SOUND
     if (xmame_has_sound()) {
@@ -720,7 +728,7 @@ static void menubar_item_setup(void)
 	}
 	check_radio_item(M_SET_FM, M_SET_FM_MAME, M_SET_FM_FMGEN, uItem);
 #else
-	DisableItem(GetMenuRef(M_SET), 16);
+	DisableMenuItem(GetMenuRef(M_SET), 16);
 #endif
 
 	i = xmame_cfg_get_sample_freq();			/* ＊＊＊＊ */
@@ -736,8 +744,8 @@ static void menubar_item_setup(void)
     } else
 #endif
     {
-	DisableItem(GetMenuRef(M_SET), 16);
-	DisableItem(GetMenuRef(M_SET), 17);
+	DisableMenuItem(GetMenuRef(M_SET), 16);
+	DisableMenuItem(GetMenuRef(M_SET), 17);
     }
 
     /* Drive ------------------------------------------------------------*/
@@ -749,11 +757,11 @@ static void menubar_item_setup(void)
     if (xmame_has_sound()) {
 	i = xmame_wavout_opened();
 	uItem = M_MISC_RECORD;
-	CheckItem(GetMenuRef(M_MISC), uItem, (i ? true : false));
+	CheckMenuItem(GetMenuRef(M_MISC), uItem, (i ? true : false));
     } else {
 	uItem = M_MISC_RECORD;
-	CheckItem(GetMenuRef(M_MISC), uItem, false);
-	DisableItem(GetMenuRef(M_MISC), uItem);
+	CheckMenuItem(GetMenuRef(M_MISC), uItem, false);
+	DisableMenuItem(GetMenuRef(M_MISC), uItem);
     }
 
     update_misc_cload();
@@ -762,7 +770,7 @@ static void menubar_item_setup(void)
 
     i = quasi88_cfg_now_showstatus();
     uItem = M_MISC_STATUS;
-    CheckItem(GetMenuRef(M_MISC), uItem, (i ? true : false));
+    CheckMenuItem(GetMenuRef(M_MISC), uItem, (i ? true : false));
 }
 
 /*======================================================================
@@ -772,31 +780,31 @@ static void menubar_item_sensitive(int sensitive)
 {
     if (sensitive) {
 
-	EnableItem(GetMenuRef(M_SYSTEM), M_SYS_RESET);
-	EnableItem(GetMenuRef(M_SYSTEM), 2);
-	EnableItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V2);
-	EnableItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V1H);
-	EnableItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V1S);
-	EnableItem(GetMenuRef(M_SYSTEM), M_SYS_MENU);
-	EnableItem(GetMenuRef(M_SYSTEM), M_SYS_SAVE);
+	EnableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_RESET);
+	EnableMenuItem(GetMenuRef(M_SYSTEM), 2);
+	EnableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V2);
+	EnableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V1H);
+	EnableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V1S);
+	EnableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_MENU);
+	EnableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_SAVE);
 
-	EnableItem(GetMenuRef(M_SET), 0);
-	EnableItem(GetMenuRef(M_DRV), 0);
-	EnableItem(GetMenuRef(M_MISC), 0);
+	EnableMenuItem(GetMenuRef(M_SET), 0);
+	EnableMenuItem(GetMenuRef(M_DRV), 0);
+	EnableMenuItem(GetMenuRef(M_MISC), 0);
 
     } else {
 
-	DisableItem(GetMenuRef(M_SYSTEM), M_SYS_RESET);
-	DisableItem(GetMenuRef(M_SYSTEM), 2);
-	DisableItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V2);
-	DisableItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V1H);
-	DisableItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V1S);
-	DisableItem(GetMenuRef(M_SYSTEM), M_SYS_MENU);
-	DisableItem(GetMenuRef(M_SYSTEM), M_SYS_SAVE);
+	DisableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_RESET);
+	DisableMenuItem(GetMenuRef(M_SYSTEM), 2);
+	DisableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V2);
+	DisableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V1H);
+	DisableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_RESET_V1S);
+	DisableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_MENU);
+	DisableMenuItem(GetMenuRef(M_SYSTEM), M_SYS_SAVE);
 
-	DisableItem(GetMenuRef(M_SET), 0);
-	DisableItem(GetMenuRef(M_DRV), 0);
-	DisableItem(GetMenuRef(M_MISC), 0);
+	DisableMenuItem(GetMenuRef(M_SET), 0);
+	DisableMenuItem(GetMenuRef(M_DRV), 0);
+	DisableMenuItem(GetMenuRef(M_MISC), 0);
     }
 }
 
@@ -865,7 +873,7 @@ void doMenuCommand(long	menuResult)
 	    {
 		Str255 deskName;
 		GetMenuItemText(GetMenuHandle(128),menuItem,deskName);
-		OpenDeskAcc(deskName);
+		//OpenDeskAcc(deskName);
 	    }
 	    break;
 	}
@@ -1178,7 +1186,7 @@ static	void	f_set_nowait(int uItem)
     if (menubar_active == FALSE) { return; }
 
     active = quasi88_cfg_now_no_wait() ? FALSE : TRUE; 	/* 逆にする */
-    CheckItem(GetMenuRef(M_SET_SPD), uItem, (active ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET_SPD), uItem, (active ? true : false));
 
     quasi88_cfg_set_no_wait(active);
 }
@@ -1204,7 +1212,7 @@ static	void	f_set_fdcwait(int uItem)
     if (menubar_active == FALSE) { return; }
 
     active = fdc_wait ? FALSE : TRUE; 			/* 逆にする */
-    CheckItem(GetMenuRef(M_SET), uItem, (active ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET), uItem, (active ? true : false));
 
     fdc_wait = active;
 }
@@ -1246,7 +1254,7 @@ static	void	f_set_full(int uItem)
     if (menubar_active == FALSE) { return; }
 
     active = quasi88_cfg_now_fullscreen() ? FALSE : TRUE; 	/* 逆にする */
-    CheckItem(GetMenuRef(M_SET), uItem, (active ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET), uItem, (active ? true : false));
 
     quasi88_cfg_set_fullscreen(active);
 }
@@ -1258,7 +1266,7 @@ static	void	f_set_pcg(int uItem)
     if (menubar_active == FALSE) { return; }
 
     active = use_pcg ? FALSE : TRUE; 				/* 逆にする */
-    CheckItem(GetMenuRef(M_SET), uItem, (active ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET), uItem, (active ? true : false));
 
     use_pcg = active;
 }
@@ -1296,7 +1304,7 @@ static	void	f_set_numlock(int uItem)
     if (menubar_active == FALSE) { return; }
 
     active = numlock_emu ? FALSE : TRUE; 		/* 逆にする */
-    CheckItem(GetMenuRef(M_SET), uItem, (active ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET), uItem, (active ? true : false));
 
     quasi88_cfg_key_numlock(active);
 }
@@ -1308,7 +1316,7 @@ static	void	f_set_romaji(int uItem)
     if (menubar_active == FALSE) { return; }
 
     active = romaji_input_mode ? FALSE : TRUE; 		/* 逆にする */
-    CheckItem(GetMenuRef(M_SET), uItem, (active ? true : false));
+    CheckMenuItem(GetMenuRef(M_SET), uItem, (active ? true : false));
 
     quasi88_cfg_key_romaji(active);
 }
@@ -1467,7 +1475,7 @@ static	void	f_misc_record(int uItem)
 	}
     }
 
-    CheckItem(GetMenuRef(M_MISC), uItem, (active ? true : false));
+    CheckMenuItem(GetMenuRef(M_MISC), uItem, (active ? true : false));
 }
 
 static	void	f_misc_cload_s(void)
@@ -1556,7 +1564,7 @@ static	void	f_misc_status(int uItem)
     if (menubar_active == FALSE) { return; }
 
     active = quasi88_cfg_now_showstatus() ? FALSE : TRUE; 	/* 逆にする */
-    CheckItem(GetMenuRef(M_MISC), uItem, (active ? true : false));
+    CheckMenuItem(GetMenuRef(M_MISC), uItem, (active ? true : false));
 
     quasi88_cfg_set_showstatus(active);
 }

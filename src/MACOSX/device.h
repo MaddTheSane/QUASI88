@@ -2,10 +2,8 @@
 #define DEVICE_H_INCLUDED
 
 
-#include <Windows.h>
-#include <Dialogs.h>
-#include <Menus.h>
-#include <QuickTime.h>
+#include <CoreGraphics/CoreGraphics.h>
+#include <Carbon/Carbon.h>
 
 
 /*
@@ -14,7 +12,7 @@
 extern	WindowRef	macWin;
 extern	GWorldPtr	macGw;
 
-extern	QDGlobals	macQd;
+//extern	QDGlobals	macQd;
 
 
 

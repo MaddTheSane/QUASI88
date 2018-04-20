@@ -60,9 +60,9 @@ int	main(void)
     /* メモリ関連の設定 */
 
     /* 拡張するスタックのサイズを指定 ↓       どれだけ確保すべきなの？	*/
-    SetApplLimit(GetApplLimit() - 65536*2);	/* スタックサイズを拡張	*/
-    MaxApplZone();				/* ヒープ領域を拡張	*/
-    MoreMasters();				/* なんのおまじない？	*/
+    //SetApplLimit(GetApplLimit() - 65536*2);	/* スタックサイズを拡張	*/
+    //MaxApplZone();				/* ヒープ領域を拡張	*/
+    //MoreMasters();				/* なんのおまじない？	*/
 
 
 

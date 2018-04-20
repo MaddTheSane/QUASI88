@@ -16,10 +16,11 @@
 #include "quasi88.h"
 #include "graph.h"
 #include "device.h"
-
+#include "OldCarbHeaders.h"
+#include <QuickTime/QuickTime.h>
 
 #ifdef	SUPPORT_DOUBLE
-#error !
+//#error !
 #endif
 
 
@@ -29,7 +30,7 @@
 WindowRef	macWin;
 GWorldPtr	macGw;
 
-QDGlobals	macQd;
+//QDGlobals	macQd;
 
 int		mac_8bpp = TRUE;	/* 優先的に、256色モードで動作させる */
 
@@ -65,20 +66,20 @@ static unsigned long chkSysDepth(void);
 
 void	mac_init(void)
 {
-    SysEnvRec sys;
+    //SysEnvRec sys;
 
     // initialize
-    InitGraf((Ptr) &macQd.thePort);
-    InitFonts();
-    InitWindows();
-    InitMenus();
-    TEInit();
-    InitDialogs(NULL);
+    //InitGraf((Ptr) &macQd.thePort);
+    //InitFonts();
+    //InitWindows();
+    //InitMenus();
+    //TEInit();
+    //InitDialogs(NULL);
     InitCursor();
 
     // color QD check
-    SysEnvirons(1, &sys);
-    if (! sys.hasColorQD) ExitToShell();
+    //SysEnvirons(1, &sys);
+    //if (! sys.hasColorQD) ExitToShell();
 
     // depth check
 #ifdef	SUPPORT_16BPP
@@ -401,7 +402,7 @@ void	graph_exit(void)
 {
     if (graph_exist) {
 	if (graph_info.fullscreen) toWindowMode();
-	CloseWindow(macWin);
+	DisposeWindow(macWin);
     }
 }
 
@@ -492,7 +493,7 @@ static void InitColor(void)
 	    { 0x0000, 0x0000, 0x0000 },		/* 全色 黒で初期化 */
 	};
 
-	defPalette = NewPalette(ALL_COLORS + 1, NULL, pmTolerant + pmExplicit, 0);
+	defPalette = NewPalette(ALL_COLORS + 1, NULL, pmTolerant | pmExplicit, 0);
 
 	// 0 is preserved by Mac	
 	rgb.red = rgb.green = rgb.blue = 255;
@@ -536,6 +537,7 @@ static void draw(int x0, int y0, int x1, int y1)
     GWorldPtr gptr;
     GDHandle ghd;
     Rect rect;
+	const BitMap* portBits;
 
     // blit !
     GetGWorld(&gptr, &ghd);
@@ -543,7 +545,8 @@ static void draw(int x0, int y0, int x1, int y1)
     SetGWorld(port, NULL);
     SetRect(&rect, x0, y0, x1, y1);
     //SetRect(&rect, 0, 0, graph_info.width, graph_info.height);
-    CopyBits(&((GrafPtr)macGw)->portBits, &(macWin->portBits), &rect, &rect,
+	portBits = GetPortBitMapForCopyBits(port);
+    CopyBits(GetPortBitMapForCopyBits(macGw), portBits, &rect, &rect,
 	     srcCopy, NULL);
     SetGWorld(gptr, ghd);
 }

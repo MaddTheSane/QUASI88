@@ -11,17 +11,22 @@
 
 /* Classic版 QUASI88 のための識別用 */
 
-#ifndef	QUASI88_CLASSIC
-#define	QUASI88_CLASSIC
+//#ifndef	QUASI88_CLASSIC
+//#define	QUASI88_CLASSIC
+//#endif
+
+
+#ifndef USE_SOUND
+#define USE_SOUND
 #endif
-
-
 
 /* エンディアンネス */
 
+#if __BIG_ENDIAN__
 #undef	LSB_FIRST
-
-
+#else
+#define	LSB_FIRST
+#endif
 
 /* メニューのタイトル／バージョン表示にて追加で表示する言葉 (任意の文字列) */
 
@@ -73,15 +78,8 @@
 #define	M_PI	PI
 #endif
 
-#ifdef	__SC__
-
-/* SC は long long が使えない? */
-#define	DENY_LONG_LONG
-
 #endif
 
-#endif
-
-
+#define CLIB_DECL
 
 #endif	/* CONFIG_H_INCLUDED */
