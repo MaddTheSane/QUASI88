@@ -249,7 +249,7 @@ coreaudio_dsp_destroy(struct sysdep_dsp_struct *dsp)
 	struct coreaudio_private *priv = (struct coreaudio_private*)dsp->_priv;
 	OSStatus audio_err;
 
-	verify_noerr (AudioOutputUnitStop (priv->unit));
+	__Verify_noErr (AudioOutputUnitStop (priv->unit));
 	
     audio_err = AudioUnitUninitialize (priv->unit);
 	if (audio_err) { printf ("AudioUnitUninitialize=%ld\n", audio_err); return; }
