@@ -39,8 +39,9 @@
 
 
 /* インラインキーワードを定義。インライン使用不可なら、このままでよい */
+#ifndef INLINE
 #define	INLINE		static
-
+#endif
 
 
 #if	0
