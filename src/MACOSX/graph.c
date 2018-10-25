@@ -1,4 +1,4 @@
-﻿/***********************************************************************
+/***********************************************************************
  * グラフィック処理 (システム依存)
  *
  *	詳細は、 graph.h 参照
@@ -348,7 +348,7 @@ static void toWindowMode(void)
     info->fullscreen    = FALSE;
     /* info->width      = ;	toFullscreenMode で	*/
     /* info->height     = ;	設定したサイズになる	*/
-    info->byte_per_line = ((**pmh).rowBytes & 0x3fff);
+    info->byte_per_line = ((*pmh)->rowBytes & 0x3fff);
     info->buffer        = GetPixBaseAddr(pmh);
 
     if (displayDepth == 8) {
@@ -384,7 +384,7 @@ static void toFullscreenMode(int width, int height)
     info->fullscreen    = TRUE;
     info->width         = screenWidth;
     info->height        = screenHeight;
-    info->byte_per_line = ((**pmh).rowBytes & 0x3fff);
+    info->byte_per_line = ((*pmh)->rowBytes & 0x3fff);
     info->buffer        = GetPixBaseAddr(pmh);
 
     //memset(info->buffer, 0x00, info->byte_per_line * info->height);
@@ -575,7 +575,7 @@ void	graph_set_window_title(const char *title)
     memcpy(wtitle+1, title, wtitle[0]);
 
     if (macWin) {
-	SetWTitle(macWin, wtitle);
+		SetWTitle(macWin, wtitle);
     }
 }
 
@@ -584,7 +584,5 @@ void	graph_set_window_title(const char *title)
 void	graph_set_attribute(int mouse_show, int grab, int keyrepeat_on)
 {
     /* 設定の仕方がわからない… */
-    (void)mouse_show;
-    (void)grab;
-    (void)keyrepeat_on;
+#pragma unused(mouse_show, grab, keyrepeat_on)
 }
